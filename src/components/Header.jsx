@@ -44,7 +44,7 @@ const Header = () => {
                     <h3>Shop by Category</h3>
                 </div>
                 { show && (
-                <div className="bg-[#262626] py-2 absolute left-0 top-[30px] w-[70%] ">
+                <div className="bg-[#262626] py-2 absolute left-0 top-[30px] w-[70%] z-[999]">
                     <ul className='cursor-pointer'>
                         <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-2 border-b-[1px] border-[#D8D8D8]'>
                             Accesories
@@ -94,7 +94,7 @@ const Header = () => {
                     <FaCartShopping/>
                 </div>
                 {usershow && (
-                <div className="bg-[#FFFFFF] absolute right-0 top-8 w-full">
+                <div className="bg-[#FFFFFF] absolute right-0 top-8 w-full z-[999]">
                     <ul className=' '>
                         <li className=' py-3 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>My Account</li>
                         <li className='py-3 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>Log Out</li>
@@ -102,7 +102,7 @@ const Header = () => {
                 </div>
                 )}
                 {cartshow && (
-                    <div className='absolute right-[-70px] top-[35px] w-[290px]'>
+                    <div className='absolute right-[-70px] top-[35px] w-[290px] z-[999]'>
                     <div className="flex items-center bg-[#F5F5F3] py-2">
                         <div className="w-1/4">
                             <img className='p-2' src={Cart} alt="" />
@@ -123,8 +123,8 @@ const Header = () => {
                             <h3>$44.00</h3>
                         </div>
                         <div className="flex pl-4">
-                            <a href="" className='mr-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>View Cart</a>
-                            <a href="" className='ml-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>Checkout</a>
+                            <a href="" className='mr-2 mb-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>View Cart</a>
+                            <a href="" className='ml-2 mb-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>Checkout</a>
                         </div>
                     </div>
                 </div>
