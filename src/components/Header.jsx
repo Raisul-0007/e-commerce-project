@@ -6,11 +6,15 @@ import { FaSearch } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
+import Cart from "../assets/cart.png"
+import { RxCross2 } from "react-icons/rx";
 const Header = () => {
     let [show, setShow] = useState(false)
     let [usershow, usersetShow] = useState(false)
+    let [cartshow, cartsetShow] = useState(false)
     let cateRef = useRef()
     let userRef = useRef()
+    let cartRef = useRef()
 
         document.addEventListener("click",(e)=>{
             if(cateRef.current.contains(e.target) == true){
@@ -22,6 +26,11 @@ const Header = () => {
                 usersetShow(!usershow)
             }else{
                 usersetShow(false)
+            }
+            if(cartRef.current.contains(e.target) == true){
+                cartsetShow(!cartshow)
+            }else{
+                cartsetShow(false)
             }
         })
 
@@ -81,7 +90,7 @@ const Header = () => {
                     <FaUser />
                     <IoMdArrowDropdown/>
                 </div>
-                <div className="cursor-pointer">
+                <div ref={cartRef} className="cursor-pointer">
                     <FaCartShopping/>
                 </div>
                 {usershow && (
@@ -90,6 +99,34 @@ const Header = () => {
                         <li className=' py-3 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>My Account</li>
                         <li className='py-3 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>Log Out</li>
                     </ul>
+                </div>
+                )}
+                {cartshow && (
+                    <div className='absolute right-[-70px] top-[35px] w-[290px]'>
+                    <div className="flex items-center bg-[#F5F5F3] py-2">
+                        <div className="w-1/4">
+                            <img className='p-2' src={Cart} alt="" />
+                        </div>
+                        <div className="w-2/4">
+                            <p>Basic Crew Neck Tee</p>
+                            <h3>$44.00 copy</h3>
+                        </div>
+                        <div className="w-1/4">
+                        <div className="flex justify-end pr-3">
+                            <RxCross2/>
+                        </div>
+                        </div>
+                    </div>
+                    <div className=" bg-[#ffffff]">
+                        <div className="flex pl-4 py-2">
+                            <p>Subtotal:</p>
+                            <h3>$44.00</h3>
+                        </div>
+                        <div className="flex pl-4">
+                            <a href="" className='mr-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>View Cart</a>
+                            <a href="" className='ml-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>Checkout</a>
+                        </div>
+                    </div>
                 </div>
                 )}
                 </div>
