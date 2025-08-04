@@ -13,26 +13,26 @@ const Ads = () => {
             <div className="flex justify-between">
                 <div className="flex items-center">
                     <PiNumberTwo/>
-                    <p className='px-2'>Two years warranty</p>
+                    <p className='font-dm lg:text-[16px] text-[14px] lg:px-2 px-1'>Two years warranty</p>
                 </div>
                 <div className="flex items-center">
                     <GrDeliver/>
-                    <p className='px-2'>Free shipping</p>
+                    <p className='font-dm lg:text-[16px] text-[14px] lg:px-2 px-1'>Free shipping</p>
                 </div>
                 <div className="flex items-center">
                     <IoIosRefresh/>
-                    <p className='px-2'>Return policy in 30 days</p>
+                    <p className='font-dm lg:text-[16px] text-[14px] lg:px-2 px-1'>Return policy in 30 days</p>
                 </div>
             </div>
-            <div className="flex py-[100px]">
-                <div className="w-1/2 p-3 cursor-pointer">
+            <div className="flex lg:py-[100px] py-[30px]">
+                <div className="w-1/2 lg:p-3 p-2 cursor-pointer">
                     <img src={Ad1} alt="" />
                 </div>
                 <div className="w-1/2">
-                    <div className="p-3 pb-4 cursor-pointer">
+                    <div className="kg:p-3 p-2 lg:pb-4 cursor-pointer">
                         <img src={Ad2} alt="" />
                     </div>
-                    <div className="p-3 py-4 cursor-pointer">
+                    <div className="lg:p-3 p-2 lg:py-4 cursor-pointer">
                         <img src={Ad3} alt="" />
                     </div>
                 </div>

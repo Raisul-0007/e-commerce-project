@@ -9,41 +9,47 @@ const Footer = () => {
     <div className='bg-[#F5F5F3]'>
         <Container>
             <div className="flex">
-            <div className="pr-[60px]">
+            <div className="w-1/7">
                 <div className="py-4">
-                    <h3 className='font-dm font-bold'>MENU</h3>
+                    <h3 className='font-dm font-bold lg:text-[16px] text-[13px]'>MENU</h3>
                 </div>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Home</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Shop</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>About</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Contact</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Journal</p>
+                <ul>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Home</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Shop</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>About</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Contact</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Journal</li>
+                </ul>
             </div>
-            <div className="px-[60px]">
+            <div className="w-1/7 ">
                 <div className="py-4">
-                    <h3 className='font-dm font-bold'>Shop</h3>
+                    <h3 className='font-dm font-bold lg:text-[16px] text-[13px]'>Shop</h3>
                 </div>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Category 1</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Category 2</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Category 3</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Category 4</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Category 5</p>
-            </div>
-            <div className="px-[60px]">
+                <ul>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Category 1</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Category 2</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Category 3</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Category 4</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Category 5</li>
+                </ul>
+               </div>
+            <div className="w-1/7">
                 <div className="py-4">
-                    <h3 className='font-dm font-bold'>HELP</h3>
+                    <h3 className='font-dm font-bold lg:text-[16px] text-[13px]'>HELP</h3>
                 </div>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Privacy Policy</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Terms & Conditions</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Special E-shop</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Shipping</p>
-                <p className='py-[5px] font-dm text-[#6D6D6D]'>Secure Payments</p>
+                <ul>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Privacy Policy</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Terms & Conditions</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Special E-shop</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Shipping</li>
+                    <li className='py-[5px] font-dm text-[#6D6D6D] lg:text-[16px] text-[12px]'>Secure Payments</li>
+                </ul>
             </div>
-            <div className="font-dm font-bold px-[90px] py-4">
-                <h3 className='pb-1'>(052) 611-5711</h3>
-                <h3>company@domain.com</h3>
+            <div className="w-2/7 py-4">
+                <h3 className='font-dm font-bold pb-1 lg:text-[16px] text-[13px]'>(052) 611-5711</h3>
+                <h3 className='font-dm font-bold lg:text-[16px] text-[13px]'>company@domain.com</h3>
             </div>
-            <div className="mt-5 ">
+            <div className="w-2/7 mt-6 ">
                 <img src={Logo} alt="" />
             </div>
             </div>
@@ -54,7 +60,7 @@ const Footer = () => {
                     <SlSocialInstagram/>
                 </div>
                 <div className="">
-                <p>2020 Orebi Minimal eCommerce Figma Template by Adveits</p>
+                <p className='font-dm lg:text-[16px] text-[13px]'>2020 Orebi Minimal eCommerce Figma Template by Adveits</p>
                 </div>
             </div>
         </Container>

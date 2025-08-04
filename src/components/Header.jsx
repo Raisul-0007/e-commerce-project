@@ -35,38 +35,38 @@ const Header = () => {
         })
 
   return (
-    <div className='bg-[#F5F5F3] py-2'>
+    <div className='bg-[#F5F5F3] lg:py-2'>
         <Container>
             <div className="flex items-center">
                 <div className="w-2/7 relative">
-                <div ref={cateRef} className="flex items-center gap-x-2 cursor-pointer">
+                <div ref={cateRef} className="flex items-center lg:gap-x-2 cursor-pointer">
                     <HiMiniBars3BottomLeft/> 
-                    <h3>Shop by Category</h3>
+                    <h3 className='font-dm lg:text-[20px] font-bold text-[13px]'>Shop by Category</h3>
                 </div>
                 { show && (
-                <div className="bg-[#262626] py-2 absolute left-0 top-[30px] w-[70%] z-[999]">
+                <div className="bg-[#262626] lg:py-2 py-1 absolute left-0 lg:top-[40px] top-[30px] lg:w-[70%] z-[999]">
                     <ul className='cursor-pointer'>
-                        <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-2 border-b-[1px] border-[#D8D8D8]'>
+                        <li className='font-dm lg:text-[16px] text-[13px] flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out lg:pl-[20px] lg:hover:pl-[30px] lg:py-2 py-1 border-b-[1px] border-[#D8D8D8]'>
                             Accesories
                             <MdOutlineArrowRight/>
                         </li >
-                        <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-3 border-b-[1px] border-[#D8D8D8]'>
+                        <li className='font-dm lg:text-[16px] text-[13px] flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out lg:pl-[20px] lg:hover:pl-[30px] lg:py-3 py-1 border-b-[1px] border-[#D8D8D8]'>
                             Furniture
                             <MdOutlineArrowRight/>
                         </li>
-                        <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-3 border-b-[1px] border-[#D8D8D8]'>
+                        <li className='font-dm lg:text-[16px] text-[13px] flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out lg:pl-[20px] lg:hover:pl-[30px] lg:py-3 py-1 border-b-[1px] border-[#D8D8D8]'>
                             Electronics
                             <MdOutlineArrowRight/>
                             </li>
-                        <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-3 border-b-[1px] border-[#D8D8D8]'>
+                        <li className='font-dm lg:text-[16px] text-[13px] flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out lg:pl-[20px] lg:hover:pl-[30px] lg:py-3 py-1 border-b-[1px] border-[#D8D8D8]'>
                              Clothes
                             <MdOutlineArrowRight/>
                             </li>
-                        <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-3 border-b-[1px] border-[#D8D8D8]'>
+                        <li className='font-dm lg:text-[16px] text-[13px] flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out lg:pl-[20px] lg:hover:pl-[30px] lg:py-3 py-1 border-b-[1px] border-[#D8D8D8]'>
                             Bags
                             <MdOutlineArrowRight/>
                             </li>
-                        <li className='flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out pl-[20px] hover:pl-[30px] py-2'>
+                        <li className='font-dm lg:text-[16px] text-[13px] flex items-center justify-between text-[rgba(255,255,255,0.7)] duration-300 ease-in-out lg:pl-[20px] lg:hover:pl-[30px] lg:py-2 py-1'>
                             Home appliances
                             <MdOutlineArrowRight/>
                             </li>
@@ -78,14 +78,14 @@ const Header = () => {
                 <div className="w-3/7">
                 <div className="">
                     <div className="py-3 w-full relative">
-                        <input type="text" className='py-3 w-full bg-[#FFFFFF] rounded-full placeholder-[#979797] pl-5 ' placeholder='Search Products'/>
-                        <div className="absolute top-3 right-2 cursor-pointer p-4">
+                        <input type="text" className='lg:py-3 py-1 w-full bg-[#FFFFFF] rounded-full placeholder-[#979797] pl-5 ' placeholder='Search Products'/>
+                        <div className="absolute lg:top-3 lg:right-2 top-1 right-0 cursor-pointer p-4">
                             <FaSearch/>
                         </div>
                     </div>
                 </div>
                 </div>
-                <div className="w-1/7 flex items-center justify-end gap-x-6 relative">
+                <div className="w-1/7 flex items-center justify-end gap-x-3 lg:gap-x-6 relative">
                 <div ref={userRef} className="flex cursor-pointer ">
                     <FaUser />
                     <IoMdArrowDropdown/>
@@ -94,37 +94,37 @@ const Header = () => {
                     <FaCartShopping/>
                 </div>
                 {usershow && (
-                <div className="bg-[#FFFFFF] absolute right-0 top-8 w-full z-[999]">
+                <div className="bg-[#FFFFFF] absolute right-0 top-8 lg:w-full w-[100px] z-[999]">
                     <ul className=' '>
-                        <li className=' py-3 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>My Account</li>
-                        <li className='py-3 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>Log Out</li>
+                        <li className='font-dm lg:text-[16px] text-[13px] lg:py-3 py-2  w-full  hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>My Account</li>
+                        <li className='font-dm lg:text-[16px] text-[13px] lg:py-3 py-2 w-full hover:bg-[#2B2B2B] hover:text-[#FFFFFF] cursor-pointer duration-300 ease-in-out text-center'>Log Out</li>
                     </ul>
                 </div>
                 )}
                 {cartshow && (
-                    <div className='absolute right-[-70px] top-[35px] w-[290px] z-[999]'>
+                    <div className='absolute lg:right-[-70px] lg:top-[35px] top-[25px] right-[-20px] lg:w-[290px] w-[200px] z-[999]'>
                     <div className="flex items-center bg-[#F5F5F3] py-2">
                         <div className="w-1/4">
-                            <img className='p-2' src={Cart} alt="" />
+                            <img className='lg:p-2 p-3' src={Cart} alt="" />
                         </div>
-                        <div className="w-2/4">
-                            <p>Basic Crew Neck Tee</p>
-                            <h3>$44.00 copy</h3>
+                        <div className="w-2/4 ">
+                            <p className='font-dm lg:text-[16px] text-[12px] '>Basic Crew Neck Tee</p>
+                            <h3 className='font-dm lg:text-[14px] text-[12px]'>$44.00</h3>
                         </div>
                         <div className="w-1/4">
-                        <div className="flex justify-end pr-3">
+                        <div className="flex lg:justify-end justify-center pr-3">
                             <RxCross2/>
                         </div>
                         </div>
                     </div>
                     <div className=" bg-[#ffffff]">
                         <div className="flex pl-4 py-2">
-                            <p>Subtotal:</p>
-                            <h3>$44.00</h3>
+                            <p className='font-dm text-[14px]'>Subtotal:</p>
+                            <h3 className='font-dm text-[14px]'>$44.00</h3>
                         </div>
                         <div className="flex pl-4">
-                            <a href="" className='mr-2 mb-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>View Cart</a>
-                            <a href="" className='ml-2 mb-2 px-7 py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>Checkout</a>
+                            <a href="" className='font-dm lg:text-[14px] text-[12px] mr-2 mb-2 p-2 lg:px-7 lg:py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>View Cart</a>
+                            <a href="" className='font-dm lg:text-[14px] text-[12px] ml-2 mb-2 p-2 lg:px-7 lg:py-2 bg-[#ffffff] border-[1px] border-solid border-[#262626] hover:bg-[#262626] hover:text-[#ffffff]'>Checkout</a>
                         </div>
                     </div>
                 </div>

@@ -5,13 +5,12 @@ const Banner = () => {
     var settings = {
     dots:true,
     infinite: true,
-    speed: 2000,
     arrows:false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 4000,
-    autoplaySpeed: 2000,
+    speed: 2000,
+    autoplaySpeed: 4000,
      appendDots: dots => (
       <div
         style={{
@@ -26,11 +25,11 @@ const Banner = () => {
         <ul style={{ margin: "0px" }}> {dots} </ul>
       </div>
     ),
-    customPaging: i => (
+    customPasging: i => (
       <div
         style={{
           color: "transparent",
-          borderRight: "2px #ffffff solid",
+          borderRight: "2px solid #ffffff ",
           padding:"5px 10px",
           cursor:"pointer",
         }}
