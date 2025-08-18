@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Container from './Container.jsx'
+import Container from '../components/Container'
 import { FaHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { LuRefreshCcw } from "react-icons/lu";
@@ -40,6 +40,24 @@ const NewArrivals = () => {
     autoplaySpeed: 4000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2 ,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      }
+    ]
   }
   if(loading){
     return(
@@ -59,7 +77,7 @@ const NewArrivals = () => {
                   {info.map((item)=>(
                 <div className='w-1/4 p-3 relative'>
                   <div className="relative">
-                    <img src={item.thumbnail} alt="" />
+                    <img className='w-[100%]' src={item.thumbnail} alt="" />
                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
                     <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
                     <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './Container';
+import Container from '../components/Container'
 import { PiNumberTwo } from "react-icons/pi";
 import { GrDeliver } from "react-icons/gr";
 import { IoIosRefresh } from "react-icons/io";

@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './Container'
+import Container from '../components/Container'
 import Ads from '../assets/Ads-2.png'
 const Ads2 = () => {
   return (

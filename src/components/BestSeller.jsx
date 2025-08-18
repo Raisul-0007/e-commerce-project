@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from './Container'
+import Container from '../components/Container'
 import best1 from '../assets/best1.png'
 import best2 from '../assets/best2.png'
 import best3 from '../assets/best3.png'
@@ -11,10 +11,10 @@ const BestSeller = () => {
   return (
     <div className='lg:py-[50px]'>
         <Container>
-            <div className="flex">
-                <div className=' w-1/4 lg:p-3 relative'>
+            <div className="flex flex-wrap">
+                <div className='lg:w-1/4 w-1/2 p-1 lg:p-3 relative'>
                     <div className="relative">
-                                    <img src={best1} alt="" />
+                                    <img className='w-[100%]' src={best1} alt="" />
                                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
                                     <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
                                     <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
@@ -34,9 +34,9 @@ const BestSeller = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-1/4 lg:p-3 relative'>
+                <div className='lg:w-1/4 w-1/2 p-1 lg:p-3 relative'>
                     <div className="relative">
-                                    <img src={best2} alt="" />
+                                    <img className='w-[100%]' src={best2} alt="" />
                                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
                                     <h3 className='flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
                                     <h3 className='flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
@@ -56,9 +56,9 @@ const BestSeller = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-1/4 lg:p-3 relative'>
+                <div className='lg:w-1/4 w-1/2 p-1 lg:p-3 relative'>
                     <div className="relative">
-                                    <img src={best3} alt="" />
+                                    <img className='w-[100%]' src={best3} alt="" />
                                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
                                     <h3 className='flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
                                     <h3 className='flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
@@ -78,9 +78,9 @@ const BestSeller = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-1/4 lg:p-3 relative'>
+                <div className='lg:w-1/4 w-1/2 p-1 lg:p-3 relative'>
                     <div className="relative">
-                                    <img src={best4} alt="" />
+                                    <img className='w-[100%]' src={best4} alt="" />
                                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
                                     <h3 className='flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
                                     <h3 className='flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>

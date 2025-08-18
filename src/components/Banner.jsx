@@ -2,7 +2,7 @@ import React from 'react'
 import BanImg from "../assets/ban.png"
 import Slider from 'react-slick';
 const Banner = () => {
-    var settings = {
+    const settings = {
     dots:true,
     infinite: true,
     arrows:false,
@@ -11,7 +11,7 @@ const Banner = () => {
     autoplay: true,
     speed: 2000,
     autoplaySpeed: 4000,
-     appendDots: dots => (
+     appendDots: dots  => (
       <div
         style={{
           borderRadius: "10px",
@@ -25,7 +25,7 @@ const Banner = () => {
         <ul style={{ margin: "0px" }}> {dots} </ul>
       </div>
     ),
-    customPasging: i => (
+    customPaging: i => (
       <div
         style={{
           color: "transparent",
