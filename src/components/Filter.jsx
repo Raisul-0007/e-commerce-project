@@ -127,19 +127,6 @@ const Filter = () => {
                     <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
                     <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
                     </li> 
-                    {/*                   
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>Brand 2</p>
-                    </li>                    
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>Brand 3</p>
-                    </li>                   
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>Brand 4</p>
-                    </li>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>Brand 5</p>
-                    </li> */}
                 </ul>
             ))}
             </div>

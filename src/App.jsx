@@ -5,6 +5,7 @@ import Journal from "./pages/Journal";
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Layout from "./components/Layout";
+import ProductDetails from "./pages/ProductDetails";
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout/>}>
@@ -13,6 +14,7 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path="/About" element={<About/>}></Route>
     <Route path="/Contact" element={<Contact/>}></Route>
     <Route path="/Journal" element={<Journal/>}></Route>
+     <Route path="/shop/:id" element={<ProductDetails/>}></Route>
   </Route>
 ))
 function App() {

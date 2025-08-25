@@ -10,7 +10,6 @@ const FilterTwo = () => {
   let lastPage = perPage * currentPage
   let firstPage = lastPage - perPage
   let allPage = info.slice(firstPage, lastPage)
-  let {short,setShort} = useState(false)
   let pageNumber = [];
   for (let i= 1; i<= Math.ceil(info.length/perPage); i++){
     pageNumber.push(i);
@@ -45,7 +44,6 @@ const FilterTwo = () => {
       <div className="flex">
         <div className="flex px-4 gap-3">
           <p className='font-dm text-[16px] text-[#767676]'>Short by:</p>
-          {short ? "hello" : "am"}
           <select className='font-dm text-[14px] text-[#767676] cursor-pointer border-1 border-[#737373] py-[2px] pr-[100px]' name="" id="">
           <option value="">Name</option>
           <option value="">Category</option>
