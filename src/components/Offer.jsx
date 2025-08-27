@@ -37,7 +37,7 @@ const Offer = () => {
                                             <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>Black</p>
                                         </div>
                                     </div>
-                                </div>
+                </div>
                 <div className='lg:w-1/4 w-1/2 p-1 lg:p-3 relative'>
                   <div className="relative">
                     <img className='w-[100%]' src={Offer2} alt="" />

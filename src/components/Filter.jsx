@@ -14,6 +14,7 @@ const Filter = () => {
     let [category, setCategory] = useState([])
     let [brandSet, brandSetShow] = useState([])
     let [priceSet, priceSetShow] = useState([])
+    let [filterCategory,setfilterCategory] = useState([])
 
     useEffect(()=>{
         setCategory([...new Set(info.map((item)=>item.category))])
@@ -24,6 +25,10 @@ const Filter = () => {
     useEffect(()=>{
         priceSetShow([...new Set(info.map((item)=>item.price))])
     },[info])
+    let handleCategory = (cItem)=>{
+        let filterItem = info.filter((item)=>{item.category == cItem})
+        setfilterCategory(filterItem)
+    }
   return (
     <>
     <Container>
@@ -39,7 +44,7 @@ const Filter = () => {
         {cate && (
                 <ul>
                 {category.map((item)=>(
-                    <li className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0]'>
+                    <li onClick={()=>{handleCategory(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0]'>
                     <p className='font-dm text-[16px] text-[#767676]'> {item}</p>
                     <div className="p-1">
                         <AiOutlinePlus/>
