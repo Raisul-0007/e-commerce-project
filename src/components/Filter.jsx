@@ -1,143 +1,76 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
-import Container from './Container'
-import { AiOutlinePlus } from "react-icons/ai";
-import { FaPlus } from "react-icons/fa6";
-import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { FaListUl, FaTableCellsLarge } from 'react-icons/fa6'
+import Pagination from './Pagination'
+import Products from './Products'
 import { ApiData } from './ContextApi';
+import { useContext, useState } from 'react'
+const Filter = ({filterCategory}) => {
+  
+  let {info} = useContext(ApiData)
+  let [perPage,setPerPage] =useState(6)
+  let [currentPage,setCurrentPage] = useState(1)
+  let lastPage = perPage * currentPage
+  let firstPage = lastPage - perPage
+  let allPage = info.slice(firstPage, lastPage)
+  let [active,setActive] =useState("")
+   
+  let pageNumber = [];
 
-const Filter = () => {
-    let {info} = useContext(ApiData)
-    let [cate,cateShow] =useState(true)
-    let [color,colorShow] =useState(true)
-    let [brand,brandShow] =useState(true)
-    let [price,priceShow] =useState(true)
-    let [category, setCategory] = useState([])
-    let [brandSet, brandSetShow] = useState([])
-    let [priceSet, priceSetShow] = useState([])
-    let [filterCategory,setfilterCategory] = useState([])
-
-    useEffect(()=>{
-        setCategory([...new Set(info.map((item)=>item.category))])
-    },[info])
-    useEffect(()=>{
-        brandSetShow([...new Set(info.map((item)=>item.brand))])
-    },[info])
-    useEffect(()=>{
-        priceSetShow([...new Set(info.map((item)=>item.price))])
-    },[info])
-    let handleCategory = (cItem)=>{
-        let filterItem = info.filter((item)=>{item.category == cItem})
-        setfilterCategory(filterItem)
+  for (let i= 1; i<= Math.ceil(info.length/perPage); i++){
+    pageNumber.push(i);
+  }
+  let prev = ()=>{
+       if(currentPage > 1){
+    setCurrentPage((index)=> index - 1)
     }
+  }
+  let paginate = (index)=>{
+   setCurrentPage(index + 1)
+  }
+  let next = ()=>{
+    if(currentPage < pageNumber.length){
+    setCurrentPage((index)=> index + 1)
+    }
+  }
+  let handlePageNumber =(e)=>{
+    setPerPage(e.target.value)
+  }
+  let handleActive = ()=>{
+    setActive("active")
+  } 
   return (
     <>
-    <Container>
-        <div className="py-[10px]">
-            <div onClick={(()=>{cateShow(!cate)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px] '>Shop by Category</h3>
-                <div className="py-3 font-dm text-[20px]">
-                   {cate ? <MdArrowDropUp/> : <MdArrowDropDown/>}
-                </div>
+    <div className="flex justify-between">
+        <div className=" flex gap-3">
+            <div onClick={()=>setActive("")}  className={`${active == "active" ?"p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" : "p-[5px] bg-[#262626] text-[#FFFFFF] cursor-pointer" }`}>
+                <FaTableCellsLarge/>
             </div>
-            
-            <div className="">
-        {cate && (
-                <ul>
-                {category.map((item)=>(
-                    <li onClick={()=>{handleCategory(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'> {item}</p>
-                    <div className="p-1">
-                        <AiOutlinePlus/>
-                    </div>
-                    </li>
-                    ))}                    
-                </ul>
-            )}
-            </div>
+           <div onClick={handleActive} className={`${active == "active" ? "p-[5px] bg-[#262626] text-[#FFFFFF] cursor-pointer" : "p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" }`}>
+             <FaListUl/>
+           </div>
         </div>
-        <div className="py-[10px]">
-            <div onClick={(()=>{colorShow(!color)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px]'>Shop by Color</h3>
-                <div className="py-3 font-dm text-[20px]">
-                    {color ? <MdArrowDropUp/> : <MdArrowDropDown/>}
-                </div>
-            </div>
-            {color &&(
-            <div className="">
-                <ul>
-                    <li className='py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#000000] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 1</p>
-                    </div>
-                    </li>         
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#FF8686] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 2</p>
-                    </div>
-                    </li>                    
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#7ED321] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 3</p>
-                    </div>
-                    </li>                   
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#B6B6B6] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 4</p>
-                    </div>
-                    </li>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#15CBA5] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 5</p>
-                    </div>
-                    </li>
-                </ul>
-            </div>
-            )}
+      <div className="flex">
+        <div className="flex px-4 gap-3">
+          <p className='font-dm text-[16px] text-[#767676]'>Short by:</p>
+          <select className='font-dm text-[14px] text-[#767676] cursor-pointer border-1 border-[#737373] py-[2px] pr-[100px]' name="" id="">
+          <option value="">Name</option>
+          <option value="">Category</option>
+          <option value="">Price</option>
+        </select>
         </div>
-        <div className="py-[10px]">
-            <div onClick={(()=>{brandShow(!brand)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px]'>Shop by Brand</h3>
-                <div className="py-3 font-dm text-[20px]">
-                    {brand ? <MdArrowDropUp/> : <MdArrowDropDown/>}
-                </div>
-            </div>
-            {brand && (
-            <div className="">
-            {brandSet.map((item)=>(
-                <ul>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
-                    </li>                    
-                </ul>
-            ))}
-            </div>
-            )}
+        <div className="flex px-4 gap-3">
+          <p className='font-dm text-[16px] text-[#767676]'>Show:</p>
+          <select onChange={handlePageNumber} className='cursor-pointer font-dm text-[14px] text-[#767676] border-1 border-[#737373] py-[2px] pr-[50px]' name="" id="">
+          <option value="6">6</option>
+          <option value="9">9</option>
+          <option value="12">12</option>
+        </select>
         </div>
-        <div className="py-[10px]">
-            <div  onClick={(()=>{priceShow(!price)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px]'>Shop by Price</h3>
-                <div className="py-3 font-dm text-[20px]">
-                    {price ? <MdArrowDropUp/> : <MdArrowDropDown/>}
-                </div>
-            </div>
-            {price && (
-            <div className="">
-            {priceSet.map((item)=>(
-                <ul>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
-                    </li> 
-                </ul>
-            ))}
-            </div>
-            )}
-        </div>
-    </Container>
+      </div>
+    </div>
+    <div className="">
+        <Products active={active} filterCategory={filterCategory} allPage={allPage}/>
+    </div>
+    <div className="py-[50px]"><Pagination pageNumber={pageNumber} paginate={paginate} prev={prev} next={next} currentPage={currentPage} filterCategory={filterCategory} /></div>
     </>
   )
 }
