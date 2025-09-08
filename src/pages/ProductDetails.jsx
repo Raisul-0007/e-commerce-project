@@ -45,10 +45,7 @@ const ProductDetails = () => {
         </div>
         <div className="">
             <div className=" flex flex-wrap">
-                <img className='w-1/2 h-[500px]' src={product.thumbnail} alt="" />
-                <img className='w-1/2 h-[500px]' src={product.thumbnail} alt="" />
-                <img className='w-1/2 h-[500px]' src={product.thumbnail} alt="" />
-                <img className='w-1/2 h-[500px]' src={product.thumbnail} alt="" />
+                <img className='w-1/3 m-auto h-[300px]' src={product.thumbnail} alt="" />
             </div>
             <div className="w-1/2 mx-auto">
                 <h2 className='dm-sons text-[30px] font-bold text-center text-[#262626] pl-[20px]'>{product.title}</h2>

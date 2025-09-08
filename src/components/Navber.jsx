@@ -14,13 +14,23 @@ const Navber = () => {
                 <img src={Logo} alt="" />
             </div>
             <div className="w-full lg:w-10/12 ">
-                <div className={`cursor-pointer lg:flex lg:mt-0 gap-6 justify-center duration-300 ease-in-out ${menu == true ? "bg-[#767676] mt-[10px] z-[-1]  pt-[10px] pl-[15px] text-[#FFFFFF] h-[120px] opacity-100 " :  " mt-[-150px]"}`}>
-                    <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/'>Home</Link>
-                    <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/Shop'>Shop</Link>
-                    <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/About'>About</Link>
-                    <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/Contact'>Contacts</Link>
-                    <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/Journal'>Journal</Link>
-                </div>   
+                   <ul className={`cursor-pointer lg:flex lg:mt-0 gap-6 justify-center duration-300 ease-in-out ${menu == true ? "bg-[#767676] mt-[10px] z-[-1]  pl-[15px] pb-[20px] text-[#FFFFFF] h-[120px] opacity-100 " :  " mt-[-150px]"}`}>
+                    <li>
+                         <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/'>Home</Link>
+                    </li>
+                    <li>
+                        <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/Shop'>Shop</Link>
+                    </li>
+                    <li>
+                        <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/About'>About</Link>
+                    </li>
+                    <li>
+                        <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/Contact'>Contacts</Link>
+                    </li>
+                    <li>
+                        <Link className='font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] hover:text-[#262626] duration-300 ease-in-out' to='/Journal'>Journal</Link>
+                    </li>
+                   </ul>   
             </div>
             <div className='lg:hidden absolute top-4 right-6' onClick={()=>setMenu(!menu)}>
                 {menu ? <ImCross/> : <FiAlignJustify/>}

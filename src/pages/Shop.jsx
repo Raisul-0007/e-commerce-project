@@ -10,13 +10,14 @@ import { ApiData } from '../components/ContextApi';
 const Shop = () => {
    let {info} = useContext(ApiData)
     let [cate,cateShow] =useState(true)
-    let [color,colorShow] =useState(true)
-    let [brand,brandShow] =useState(true)
-    let [price,priceShow] =useState(true)
+    let [brand,brandShow] =useState(false)
+    let [price,priceShow] =useState(false)
     let [category, setCategory] = useState([])
     let [brandSet, brandSetShow] = useState([])
     let [priceSet, priceSetShow] = useState([])
     let [filterCategory,setfilterCategory] = useState([])
+    let [low, setLow ] = useState()
+    let [high, setHigh ] = useState()
     useEffect(()=>{
         setCategory([...new Set(info.map((item)=>item.category))])
     },[info])
@@ -30,8 +31,19 @@ const Shop = () => {
         let filterItem = info.filter((item)=>item.category == cItem)
         setfilterCategory(filterItem)
     }
+    let handleBrand = (bItem)=>{
+        let filterItem = info.filter((item)=>item.brand == bItem)
+        setfilterCategory(filterItem)
+    }
     let handleAllProduct = ()=> {
         setfilterCategory("")
+    }
+    let handlePrice = (value)=>{
+        setLow(value.low)
+        setLow(value.high)
+        let priceFilter = info.filter((item)=> item.price > value.low && item.price < value.high)
+        setfilterCategory(priceFilter);
+        
     }
   return (
     <>
@@ -78,50 +90,6 @@ const Shop = () => {
             </div>
           </div>
           <div className="py-[10px]">
-            <div onClick={(()=>{colorShow(!color)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px]'>Shop by Color</h3>
-                <div className="py-3 font-dm text-[20px]">
-                    {color ? <MdArrowDropUp/> : <MdArrowDropDown/>}
-                </div>
-            </div>
-            {color &&(
-            <div className="">
-                <ul>
-                    <li className='py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#000000] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 1</p>
-                    </div>
-                    </li>         
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#FF8686] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 2</p>
-                    </div>
-                    </li>                    
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#7ED321] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 3</p>
-                    </div>
-                    </li>                   
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#B6B6B6] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 4</p>
-                    </div>
-                    </li>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <div className="flex">
-                        <div className="h-[10px] w-[10px] rounded-full bg-[#15CBA5] m-1.5"></div>
-                        <p className='font-dm text-[16px] text-[#767676]'>Color 5</p>
-                    </div>
-                    </li>
-                </ul>
-            </div>
-            )}
-          </div>
-          <div className="py-[10px]">
             <div onClick={(()=>{brandShow(!brand)})} className="flex justify-between py-[15px]">
                 <h3 className='font-dm text-[20px]'>Shop by Brand</h3>
                 <div className="py-3 font-dm text-[20px]">
@@ -130,13 +98,22 @@ const Shop = () => {
             </div>
             {brand && (
             <div className="">
+            <ul>
+                <li onClick={handleAllProduct} className=' flex justify-between py-[10px] border-b-1 border-[#F0F0F0]'>
+                    <p className='font-dm text-[16px] text-[#767676] cursor-pointer'>All Brand</p>
+                    <div className="p-1">
+                        <AiOutlinePlus/>
+                    </div>
+                </li>
             {brandSet.map((item)=>(
-                <ul>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
-                    </li>                    
-                </ul>
+                <li onClick={()=>{handleBrand(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer'>
+                <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
+                <div className="p-1">
+                    <AiOutlinePlus/>
+                </div>
+                </li>                    
             ))}
+            </ul>
             </div>
             )}
           </div>
@@ -149,13 +126,20 @@ const Shop = () => {
             </div>
             {price && (
             <div className="">
-            {priceSet.map((item)=>(
                 <ul>
-                    <li className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
-                    </li> 
+                    <li onClick={handleAllProduct} className=' py-[10px] border-b-1 border-[#F0F0F0]'>
+                    <p className='font-dm text-[16px] text-[#767676]'>All Price</p>
+                    </li>
+                    <li onClick={()=> handlePrice({low:0, high:5})} className=' py-[10px] border-b-1 border-[#F0F0F0]'>
+                    <p className='font-dm text-[16px] text-[#767676]'>$0-$5</p>
+                    </li>
+                    <li onClick={()=> handlePrice({low:6, high:20})}  className=' py-[10px] border-b-1 border-[#F0F0F0]'>
+                    <p className='font-dm text-[16px] text-[#767676]'>$6-$20</p>
+                    </li>
+                    <li onClick={()=> handlePrice({low:21, high:100})} className=' py-[10px] border-b-1 border-[#F0F0F0]'>
+                    <p className='font-dm text-[16px] text-[#767676]'>$21-$100</p>
+                    </li>
                 </ul>
-            ))}
             </div>
             )}
           </div>
