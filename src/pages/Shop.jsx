@@ -106,7 +106,7 @@ const Shop = () => {
                     </div>
                 </li>
             {brandSet.map((item)=>(
-                <li onClick={()=>{handleBrand(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer'>
+                <li onClick={()=>{handleBrand(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer last:hidden'>
                 <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
                 <div className="p-1">
                     <AiOutlinePlus/>

@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import About from './pages/About';
 import Layout from "./components/Layout";
 import ProductDetails from "./pages/ProductDetails";
+import 'flowbite';
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout/>}>
