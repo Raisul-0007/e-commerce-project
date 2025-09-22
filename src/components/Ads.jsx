@@ -26,14 +26,20 @@ const Ads = () => {
             </div>
             <div className="flex lg:py-[100px] py-[30px]">
                 <div className="w-1/2 lg:p-3 p-2 cursor-pointer">
+                <a href="/shop">
                     <img src={Ad1} alt="" />
+                </a>
                 </div>
                 <div className="w-1/2">
                     <div className="kg:p-3 p-2 lg:pb-4 cursor-pointer">
+                    <a href="/shop">
                         <img src={Ad2} alt="" />
+                    </a>
                     </div>
                     <div className="lg:p-3 p-2 lg:py-4 cursor-pointer">
+                    <a href="/shop">
                         <img src={Ad3} alt="" />
+                    </a>
                     </div>
                 </div>
             </div>

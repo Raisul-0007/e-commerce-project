@@ -5,7 +5,9 @@ const Ads2 = () => {
   return (
     <div>
         <Container className='lg:pb-[100px] lg:pt-[50px] cursor-pointer'>
-            <img src={Ads} alt="" />
+            <a href="/shop">
+              <img src={Ads} alt="" />
+            </a>
         </Container>
     </div>
   )

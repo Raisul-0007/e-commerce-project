@@ -8,11 +8,8 @@ import { IoIosStarHalf } from "react-icons/io";
 import { IoIosStarOutline } from "react-icons/io";
 import { ApiData } from '../components/ContextApi';
 import { FaMinus, FaPlus } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../components/slice/counterSlice';
 const ProductDetails = () => {
     let productsId = useParams()
-    let dispatch = useDispatch()
     let info = useContext(ApiData)
     let [product, setProduct] = useState([])
     let [show, setShow] = useState(false)
@@ -39,10 +36,6 @@ const ProductDetails = () => {
     })
     let discountPrice = (product.price / 100) * product.discountPercentage;
     let mainPrice = product.price - discountPrice
-
-    let handleCart = (item) => {   
-        dispatch(addToCart({...item, qun:1}))
-    }
 
     return (
         <>
@@ -84,7 +77,7 @@ const ProductDetails = () => {
                 </div>
                 <div className="py-[20px] flex gap-4 lg:w-2/5">
                     <a href="#" className='text-[#262626] border-1 border-[#262626] py-[10px] px-[15px] hover:bg-[#262626] hover:text-[#ffffff]'>Add to Wish List</a>
-                    <a href="#" onClick={()=> handleCart(product)} className='text-[#262626] border-1 border-[#262626] py-[10px] px-[15px] hover:bg-[#262626] hover:text-[#ffffff] '>Add to Cart</a>
+                    <a href="#" className='text-[#262626] border-1 border-[#262626] py-[10px] px-[15px] hover:bg-[#262626] hover:text-[#ffffff] '>Add to Cart</a>
                 </div>
                 <div className="pt-[10px] lg:w-2/5">
                     <div onClick={(() => { setShow(!show) })} className="flex justify-between items-center py-[15px] cursor-pointer border-y-1 border-[#F0F0F0]">

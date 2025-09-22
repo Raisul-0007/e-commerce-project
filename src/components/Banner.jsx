@@ -1,6 +1,7 @@
 import React from 'react'
 import BanImg from "../assets/ban.png"
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 const Banner = () => {
     const settings = {
     dots:true,
@@ -42,16 +43,24 @@ const Banner = () => {
     <div>
         <Slider {...settings}>
         <div className="cursor-pointer">
+          <Link to="/shop">
             <img src={BanImg} alt="" />
+          </Link>  
         </div>
         <div className="cursor-pointer">
+          <Link to="/shop">
             <img src={BanImg} alt="" />
+          </Link>  
         </div>
         <div className="cursor-pointer">
+          <Link to="/shop">
             <img src={BanImg} alt="" />
+          </Link>  
         </div>
         <div className="cursor-pointer">
+          <Link to="/shop">
             <img src={BanImg} alt="" />
+          </Link>  
         </div>
          </Slider>
     </div>

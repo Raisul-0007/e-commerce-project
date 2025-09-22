@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <div className='bg-[#F5F5F3]'>
         <Container>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap pl-2">
             <div className="md:w-1/7 w-1/3">
                 <div className="py-4">
                     <h3 className='font-dm font-bold lg:text-[16px] text-[13px]'>MENU</h3>
@@ -54,7 +54,7 @@ const Footer = () => {
                 <img src={Logo} alt="" />
             </div>
             </div>
-            <div className='py-[30px] flex justify-between'>
+            <div className='pl-2 pr-2 md:py-[30px] flex justify-between'>
                 <div className="flex gap-3">
                     < GrFacebookOption/>
                     <FaLinkedinIn/>
