@@ -7,14 +7,18 @@ import { FaUser } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import Cart from "../assets/cart.png"
-import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from "react-icons/rx"; 
+import { useSelector } from 'react-redux';
+
 const Header = () => {
     let [show, setShow] = useState(false)
     let [usershow, usersetShow] = useState(false)
-    let [cartshow, cartsetShow] = useState(false)
+    // let [cartshow, cartsetShow] = useState(false)
     let cateRef = useRef()
     let userRef = useRef()
     let cartRef = useRef()
+    let addToCart = useSelector((state)=>state.product.cartItem)
+
 
         document.addEventListener("click",(e)=>{
             if(cateRef.current.contains(e.target) == true){
@@ -27,11 +31,11 @@ const Header = () => {
             }else{
                 usersetShow(false)
             }
-            if(cartRef.current.contains(e.target) == true){
-                cartsetShow(!cartshow)
-            }else{
-                cartsetShow(false)
-            }
+            // if(cartRef.current.contains(e.target) == true){
+            //     cartsetShow(!cartshow)
+            // }else{
+            //     cartsetShow(false)
+            // }
         })
 
   return (
@@ -91,6 +95,7 @@ const Header = () => {
                     <IoMdArrowDropdown/>
                 </div>
                 <div ref={cartRef} className="cursor-pointer">
+                    {addToCart.length}
                     <FaCartShopping/>
                 </div>
                 {usershow && (
@@ -101,7 +106,7 @@ const Header = () => {
                     </ul>
                 </div>
                 )}
-                {cartshow && (
+                {/* {cartshow && (
                     <div className='absolute lg:right-[-70px] lg:top-[35px] top-[25px] right-[-20px] lg:w-[290px] w-[200px] z-[999]'>
                     <div className="flex items-center bg-[#F5F5F3] py-2">
                         <div className="w-1/4">
@@ -128,7 +133,7 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                )}
+                )} */}
                 </div>
             </div>
         </Container>
