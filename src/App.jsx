@@ -7,6 +7,7 @@ import About from './pages/About';
 import Layout from "./components/Layout";
 import ProductDetails from "./pages/ProductDetails";
 import 'flowbite';
+import Cart from "./pages/Cart";
 
 let router = createBrowserRouter(createRoutesFromElements(
   <Route element={<Layout/>}>
@@ -16,6 +17,7 @@ let router = createBrowserRouter(createRoutesFromElements(
     <Route path="/Contact" element={<Contact/>}></Route>
     <Route path="/Journal" element={<Journal/>}></Route>
      <Route path="/shop/:id" element={<ProductDetails/>}></Route>
+     <Route path="/Cart" element={<Cart/>}></Route>
   </Route>
 ))
 function App() {

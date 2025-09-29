@@ -6,9 +6,9 @@ import { FaSearch } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
-import Cart from "../assets/cart.png"
 import { RxCross2 } from "react-icons/rx"; 
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     let [show, setShow] = useState(false)
@@ -94,10 +94,10 @@ const Header = () => {
                     <FaUser />
                     <IoMdArrowDropdown/>
                 </div>
-                <div ref={cartRef} className="cursor-pointer">
-                    {addToCart.length}
-                    <FaCartShopping/>
-                </div>
+                <Link className='cursor-pointer flex gap-1 items-center' to='/Cart'>
+                <FaCartShopping/>
+                {addToCart.length}
+                </Link >
                 {usershow && (
                 <div className="bg-[#FFFFFF] absolute right-0 top-8 lg:w-full w-[100px] z-[999]">
                     <ul className=' '>
