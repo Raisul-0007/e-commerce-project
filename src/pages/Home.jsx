@@ -7,6 +7,7 @@ import BestSeller from '../components/BestSeller'
 import Offer from '../components/Offer'
 
 const Home = () => {
+   window.scrollTo(0, 0)
   return (
     <>
     <Banner/>

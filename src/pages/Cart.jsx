@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { discreament, increament, removeCart } from '../components/slice/productSlice'
 
 const Cart = () => {
+     window.scrollTo(0, 0)
     let dicpatch = useDispatch()
     let cartData = useSelector((state)=>state.product.cartItem)
     let handleRemove =(item)=>{
@@ -58,14 +59,14 @@ const Cart = () => {
                     <h3 className='dm-sons text-[20pxpx]'>{((item.price - (item.price * item.discountPercentage / 100))* item.qun).toFixed(2)}</h3>
                     </div>
                 </div>
-                <div className="flex">
-                    <div className="py-[5px] px-[15px]">Grand Total</div>
-                    <div className="py-[5px] px-[15px]"></div>
-                </div>
                 </div>
             ))):
             <h2 className="text-center dm-sons text-[36px] py-[50px]">Your Cart Is Empty</h2>
             }
+              <div className="flex">
+                    <div className="py-[5px] px-[15px]">Grand Total</div>
+                    <div className="py-[5px] px-[15px]"></div>
+                </div>
         </Container>
     </div>
   )

@@ -11,8 +11,9 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../components/slice/productSlice';
 const ProductDetails = () => {
+     window.scrollTo(0,0)
     let productsId = useParams()
-    let info = useContext(ApiData)
+    let { loading} = useContext(ApiData)
     let dispatch = useDispatch()
     let [product, setProduct] = useState([])
     let [show, setShow] = useState(false)
@@ -44,6 +45,13 @@ const ProductDetails = () => {
        dispatch(addToCart({...item, qun:1})) 
     }
 
+    if(loading){
+    return(
+      <div>
+      <h1 className='font-dm text-center text-[40px]'>Loading........</h1>
+      </div>
+    )
+  }
     return (
         <>
             <Container>
@@ -113,27 +121,27 @@ const ProductDetails = () => {
                     )}
                 </div>
                 <div className='w-2/5'>
-                    <div class="mb-2 border-b border-gray-200 dark:border-gray-700">
-                        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-                            <li class="me-2" role="presentation">
-                                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Description</button>
+                    <div className="mb-2 border-b border-gray-200 dark:border-gray-700">
+                        <ul className="flex flex-wrap -mb-px text-sm font-medium text-center" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
+                            <li className="me-2" role="presentation">
+                                <button className="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Description</button>
                             </li>
-                            <li class="me-2" role="presentation">
-                                <button class="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Review</button>
+                            <li className="me-2" role="presentation">
+                                <button className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Review</button>
                             </li>
                         </ul>
                     </div>
                     <div id="default-tab-content">
-                        <div class=" py-2 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <p class="text-sm text-gray-500 bg-gray-100 p-2 rounded dark:text-gray-400">{product.description}</p>
+                        <div className=" py-2 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <p className="text-sm text-gray-500 bg-gray-100 p-2 rounded dark:text-gray-400">{product.description}</p>
                         </div>
-                        <div class="hidden py-2 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                            <p class="text-sm  bg-gray-100 p-2 rounded">
+                        <div className="hidden py-2 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                            <p className="text-sm  bg-gray-100 p-2 rounded">
                                 {product?.reviews?.map((item) => (
                                     <>
                                         <div className="flex gap-3 items-center pt-2">
                                             <div className="dm-sons text-[14px]">{item.reviewerName}</div>
-                                            <div className="flex dm-sons text-[12px] text-[#FFD881]">{clientRating}</div>
+                                            <div className="flex dm-sons text-[12px] text-[#FFD881]">{item.clientRating}</div>
                                         </div>
                                         <div className="dm-sons text-[11px] pb-2">{item.comment}</div>
                                     </>

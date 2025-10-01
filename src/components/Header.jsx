@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Container from './Container'
 import { HiMiniBars3BottomLeft } from "react-icons/hi2";
 import { MdOutlineArrowRight } from "react-icons/md";
@@ -8,18 +8,24 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx"; 
 import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { ApiData } from '../components/ContextApi';
+ 
 const Header = () => {
+    let navigate = useNavigate()
     let [show, setShow] = useState(false)
     let [usershow, usersetShow] = useState(false)
+    let [filter,setFilter] =useState([])
+    let [search, setSearch] = useState(false)
+    
     // let [cartshow, cartsetShow] = useState(false)
     let cateRef = useRef()
     let userRef = useRef()
     let cartRef = useRef()
     let addToCart = useSelector((state)=>state.product.cartItem)
-
-
+    let {info, loading} = useContext(ApiData)
+    
+    
         document.addEventListener("click",(e)=>{
             if(cateRef.current.contains(e.target) == true){
                 setShow(!show)
@@ -37,6 +43,21 @@ const Header = () => {
             //     cartsetShow(false)
             // }
         })
+    let handleSearch =(e)=>{
+        
+        if(e.target.value){
+            setSearch(true)
+            let productFilter = info.filter((item)=>item.title.toLowerCase().includes(e.target.value.toLowerCase()) 
+        )
+        setFilter(productFilter);
+        }else{
+            setSearch(false)
+        }
+    }
+    let handleproduct= (id)=>{
+        navigate(`/shop/${id}`)
+        window.location.reload()
+    }
 
   return (
     <div className='bg-[#F5F5F3] lg:py-2'>
@@ -80,13 +101,22 @@ const Header = () => {
                 }
                 </div>
                 <div className="w-3/7">
-                <div className="">
-                    <div className="py-3 w-full relative">
-                        <input type="text" className='lg:py-3 py-1 w-full bg-[#FFFFFF] rounded-full placeholder-[#979797] pl-5 ' placeholder='Search Products'/>
+                <div className="relative">
+                    <div className=" py-3 w-full relative">
+                        <input onChange={handleSearch} type="text" className='lg:py-3 py-1 w-full bg-[#FFFFFF] rounded-full placeholder-[#979797] pl-5 ' placeholder='Search Products'/>
                         <div className="absolute lg:top-3 lg:right-2 top-1 right-0 cursor-pointer p-4">
                             <FaSearch/>
                         </div>
                     </div>
+                    {search &&
+                    <div className="absolute z-[999] top-[63px] left-1  py-[5px] max-h-[150px] w-[98%] bg-[#ffffff] rounded-lg overflow-y-scroll">
+                        {filter.map((item)=>(
+                            <button onClick={()=>handleproduct(item.id)} to={`/shop/${item.id}`}>
+                                <p className="text-[#262626] pl-2 cursor-pointer rounded-md py-1 hover:bg-[#767676] hover:text-[#ffffff]">{item.title}</p>
+                            </button>
+                        ))}
+                    </div>
+                    }
                 </div>
                 </div>
                 <div className="w-1/7 flex items-center justify-end gap-x-3 lg:gap-x-6 relative">

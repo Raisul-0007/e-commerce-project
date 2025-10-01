@@ -8,6 +8,9 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { ApiData } from '../components/ContextApi';
 
 const Shop = () => {
+     window.scrollTo(0, 0)
+
+     
    let {info} = useContext(ApiData)
     let [cate,cateShow] =useState(true)
     let [brand,brandShow] =useState(false)
