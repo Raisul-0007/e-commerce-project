@@ -19,19 +19,19 @@ const Navber = () => {
             <div className="w-full lg:w-10/12 ">
                    <ul className={`cursor-pointer lg:flex lg:mt-0 gap-6 justify-center duration-300 ease-in-out ${menu == true ? "bg-[#767676] mt-[10px] z-[-1]  pl-[15px] pb-[20px] text-[#FFFFFF] h-[120px] opacity-100 " :  " mt-[-150px]"}`}>
                     <li>
-                         <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/" ? "lg:text-[#262626]" : "text-red-500"} hover:text-[#262626] duration-300 ease-in-out`} to='/'>Home</Link>
+                         <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/" ? "text-[#262626] font-bold " : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/'>Home</Link>
                     </li>
                     <li>
-                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Shop" ? "text-[#262626]" : "text-red-500"} hover:text-[#262626] duration-300 ease-in-out`} to='/Shop'>Shop</Link>
-                    </li>git
-                    <li>
-                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/About" ? "text-[#262626]" : "text-red-500"} hover:text-[#262626] duration-300 ease-in-out`} to='/About'>About</Link>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Shop" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/Shop'>Shop</Link>
                     </li>
                     <li>
-                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Contact" ? "text-[#262626]" : "text-red-500"} hover:text-[#262626] duration-300 ease-in-out`} to='/Contact'>Contacts</Link>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/About" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/About'>About</Link>
                     </li>
                     <li>
-                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Journal" ? "text-[#262626]" : "text-red-500"} hover:text-[#262626] duration-300 ease-in-out`} to='/Journal'>Journal</Link>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Contact" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/Contact'>Contacts</Link>
+                    </li>
+                    <li>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Journal" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/Journal'>Journal</Link>
                     </li>
                    </ul>   
             </div>
