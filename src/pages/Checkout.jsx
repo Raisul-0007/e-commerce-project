@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import axios from 'axios' 
+import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 const Checkout = () => {
   let [name, setName] = useState('')
   let [number, setNumber] = useState('')
   let [email, setEmail] = useState('')
+  let [loading, setLoading] = useState(false)
   let handleName=(e)=>{
     setName(e.target.value)
   }
@@ -13,9 +16,24 @@ const Checkout = () => {
     setEmail(e.target.value)
   }
   let handlePayment=(e)=>{
+    setLoading(true)
     e.preventDefault()
-    console.log(name, number, email)  
+    if(name && number && email){
+      axios.post("http://localhost:3000/order",{
+      name:name,
+      number:number,
+      email : email,
+    }).then(()=>{
+      console.log("order placed")
+      setLoading(false)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }else{
+    alert("Please fill all the details")
+    
   }
+}
   return (
     <div>
       <section className=" py-8 antialiased md:py-16">
@@ -134,6 +152,7 @@ const Checkout = () => {
             type="submit"
             className="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium bg-[#262626] text-white hover:bg-[#767676]"
           >
+            {loading ? <AiOutlineLoading3Quarters/> : " Proceed to Payment"}
             Proceed to Payment
           </button>
           <p className="text-sm font-normal text-[#767676]">
