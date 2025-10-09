@@ -9,12 +9,13 @@ import ProductDetails from "./pages/ProductDetails";
 import 'flowbite';
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-import SingUp from "./pages/SingUp";
 import Login from './pages/Login';
+import SignUp from "./pages/SignUp";
 
 
 let router = createBrowserRouter(createRoutesFromElements(
   <>
+      <Route path="/Login" element={<Login/>}></Route>
   <Route element={<Layout/>}>
     <Route index element={<Home/>}></Route>
     <Route path="/Shop" element={<Shop/>}></Route>
@@ -25,8 +26,7 @@ let router = createBrowserRouter(createRoutesFromElements(
      <Route path="/Cart" element={<Cart/>}></Route>
     <Route path="/Checkout" element={<Checkout/>}></Route>
   </Route>    
-  <Route path="/SingUp" element={<SingUp/>}></Route>
-    <Route path="/Login" element={<Login/>}></Route>
+  <Route path="/SignUp" element={<SignUp/>}></Route>
 
   </>
 ))
