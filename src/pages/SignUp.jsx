@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+import Logo from '../assets/logo.png'
 const SignUp = () => {
   let navigate = useNavigate()
    const auth = getAuth();
   let [email, setEmail] = useState('')
   let [password, setPassword] = useState('')
+  let [show, setShow] = useState(false)
   let handleEmail= (e)=>{
     setEmail(e.target.value)
   } 
@@ -30,6 +32,9 @@ const SignUp = () => {
 
   });
   }
+  let showPassword = ()=>{
+  setShow(!show)
+}
 
   return (
     <div>
@@ -38,7 +43,7 @@ const SignUp = () => {
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             alt="Your Company"
-            src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
+            src={Logo}
             className="mx-auto h-10 w-auto"
           />
           <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-[#262626]">
@@ -75,15 +80,18 @@ const SignUp = () => {
                   </a>
                 </div>
               </div>
-              <div className="mt-2">
+              <div className="relative mt-2">
                 <input onChange={handlePassword}
                   id="password"
                   name="password"
-                  type="password"
+                  type={show ? "text" : "password"}
                   required
                   autoComplete="current-password"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-[#262626] outline-1 -outline-offset-1 outline-[#767676] placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-[#262626] sm:text-sm/6"
                 />
+                <div className="absolute right-2 top-[50%] transform -translate-y-[50%]" onClick={showPassword}>
+                   {show ? <FaRegEyeSlash /> :<FaRegEye />}
+                </div>
               </div>
             </div>
 
