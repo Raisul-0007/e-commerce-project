@@ -54,7 +54,7 @@ const Footer = () => {
                 <img src={Logo} alt="" />
             </div>
             </div>
-            <div className='pl-2 pr-2 md:py-[30px] flex justify-between'>
+            <div className='pl-2 pr-2 md:py-[30px] lg:flex justify-between'>
                 <div className="flex gap-3">
                     < GrFacebookOption/>
                     <FaLinkedinIn/>

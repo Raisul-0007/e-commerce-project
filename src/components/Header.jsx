@@ -66,7 +66,7 @@ const Header = () => {
                 <div className="w-2/7 relative">
                 <div ref={cateRef} className="flex items-center lg:gap-x-2 cursor-pointer">
                     <HiMiniBars3BottomLeft/> 
-                    <h3 className='font-dm lg:text-[20px] font-bold text-[13px]'>Shop by Category</h3>
+                    <h3 className='font-dm lg:text-[20px] font-bold lg:block hidden'>Shop by Category</h3>
                 </div>
                 { show && (
                 <div className="bg-[#262626] lg:py-2 py-1 absolute left-0 lg:top-[40px] top-[30px] lg:w-[70%] z-[999]">
@@ -104,7 +104,7 @@ const Header = () => {
                 <div className="relative">
                     <div className=" py-3 w-full relative">
                         <input onChange={handleSearch} type="text" className='lg:py-3 py-1 w-full bg-[#FFFFFF] rounded-full placeholder-[#979797] pl-5 ' placeholder='Search Products'/>
-                        <div className="absolute lg:top-3 lg:right-2 top-1 right-0 cursor-pointer p-4">
+                        <div className="absolute lg:top-3 lg:right-2 top-2 right-[-7px] cursor-pointer p-4 lg:text-[16px] text-[12px]">
                             <FaSearch/>
                         </div>
                     </div>
@@ -119,12 +119,12 @@ const Header = () => {
                     }
                 </div>
                 </div>
-                <div className="w-1/7 flex items-center justify-end gap-x-3 lg:gap-x-6 relative">
-                <div ref={userRef} className="flex cursor-pointer ">
+                <div className="w-1/7 flex items-center justify-end gap-1 lg:gap-x-6 relative">
+                <div ref={userRef} className="flex cursor-pointer lg:text-[16px] text-[12px]">
                     <FaUser />
                     <IoMdArrowDropdown/>
                 </div>
-                <Link className='cursor-pointer flex gap-1 items-center' to='/Cart'>
+                <Link className='cursor-pointer flex gap-1 items-center lg:text-[16px] text-[12px]' to='/Cart'>
                 <FaCartShopping/>
                 {addToCart.length}
                 </Link >

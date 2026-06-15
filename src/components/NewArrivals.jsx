@@ -12,7 +12,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className="absolute right-[5px] top-[15%] lg:top-[40%] z-100 p-[15px] rounded-full bg-[rgba(151,151,151,0.4)] cursor-pointer"
+      className="absolute right-[5px] top-[30%] lg:top-[40%] z-100 p-[15px] rounded-full bg-[rgba(151,151,151,0.4)] cursor-pointer"
       onClick={onClick}
     ><FaArrowRight /></div>
   );
@@ -22,7 +22,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
-      className='absolute left-[5px] top-[15%] lg:top-[40%] z-100 p-[15px] rounded-full bg-[rgba(151,151,151,0.4)] cursor-pointer'
+      className='absolute left-[5px] top-[30%] lg:top-[40%] z-100 p-[15px] rounded-full bg-[rgba(151,151,151,0.4)] cursor-pointer'
       onClick={onClick}
     ><FaArrowLeft /></div>
   );
@@ -91,8 +91,8 @@ const NewArrivals = () => {
                   </div>
                   <div className="py-5">
                     <div className="flex justify-between">
-                      <h3 className='font-dm lg:text-[16px] text-[12px]'>{item.title}</h3>
-                      <h2 className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>{item.price} $</h2>
+                      <h3 className='font-dm font-bold lg:text-[16px] text-[14px]'>{item.title}</h3>
+                      <h2 className='font-dm lg:text-[16px] text-[14px] text-[#767676]'>{item.price} $</h2>
                     </div>
                     <div className="py-3">
                       <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>{item.category}</p>

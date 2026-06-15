@@ -12,16 +12,22 @@ const Ads = () => {
         <Container>
             <div className="flex justify-between">
                 <div className="flex items-center">
-                    <PiNumberTwo/>
-                    <p className='font-dm lg:text-[16px] text-[14px] lg:px-2 px-1'>Two years warranty</p>
+                    <div className="lg:text-[16px] text-[12px]">
+                        <PiNumberTwo/>
+                    </div>
+                    <p className='font-dm lg:text-[16px] text-[10px] lg:px-2 px-1'>Two years warranty</p>
                 </div>
                 <div className="flex items-center">
+                    <div className="lg:text-[16px] text-[12px]">
                     <GrDeliver/>
-                    <p className='font-dm lg:text-[16px] text-[14px] lg:px-2 px-1'>Free shipping</p>
+                    </div>
+                    <p className='font-dm lg:text-[16px] text-[10px] lg:px-2 px-1'>Free shipping</p>
                 </div>
                 <div className="flex items-center">
+                    <div className="lg:text-[16px] text-[12px]">
                     <IoIosRefresh/>
-                    <p className='font-dm lg:text-[16px] text-[14px] lg:px-2 px-1'>Return policy in 30 days</p>
+                    </div>
+                    <p className='font-dm lg:text-[16px] text-[10px] lg:px-2 px-1'>Return policy in 30 days</p>
                 </div>
             </div>
             <div className="flex lg:py-[100px] py-[30px]">
