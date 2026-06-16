@@ -41,25 +41,17 @@ const Filter = ({filterCategory}) => {
     <>
     <div className="flex justify-between">
         <div className=" flex gap-3">
-            <div onClick={()=>setActive("")}  className={`${active == "active" ?"p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" : "p-[5px] bg-[#262626] text-[#FFFFFF] cursor-pointer" }`}>
+            <div onClick={()=>setActive("")}  className={`${active == "active" ?"p-[4px] lg:text-[16px] text-[12px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" : "p-[5px] lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] cursor-pointer " }`}>
                 <FaTableCellsLarge/>
             </div>
-           <div onClick={handleActive} className={`${active == "active" ? "p-[5px] bg-[#262626] text-[#FFFFFF] cursor-pointer" : "p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" }`}>
+           <div onClick={handleActive} className={`${active == "active" ? "p-[5px] lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] cursor-pointer " : " p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer lg:text-[16px] text-[12px]" }`}>
              <FaListUl/>
            </div>
         </div>
       <div className="flex">
-        <div className="flex px-4 gap-3">
-          <p className='font-dm text-[16px] text-[#767676]'>Short by:</p>
-          <select className='font-dm text-[14px] text-[#767676] cursor-pointer border-1 border-[#737373] py-[2px] pr-[100px]' name="" id="">
-          <option value="">Name</option>
-          <option value="">Category</option>
-          <option value="">Price</option>
-        </select>
-        </div>
-        <div className="flex px-4 gap-3">
-          <p className='font-dm text-[16px] text-[#767676]'>Show:</p>
-          <select onChange={handlePageNumber} className='cursor-pointer font-dm text-[14px] text-[#767676] border-1 border-[#737373] py-[2px] pr-[50px]' name="" id="">
+        <div className="flex items-center px-4 gap-3">
+          <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>Show:</p>
+          <select onChange={handlePageNumber} className='py-0.5 lg:text-[14px] text-[10px] cursor-pointer font-dm text-[#767676] border-1 border-[#737373] lg:py-[2px] lg:pr-[50px]' >
           <option value="6">6</option>
           <option value="9">9</option>
           <option value="12">12</option>

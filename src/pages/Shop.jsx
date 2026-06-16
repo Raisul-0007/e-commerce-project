@@ -52,7 +52,7 @@ const Shop = () => {
     <>
     <Container>
       <div className="lg:pt-[80px]">
-        <h1 className="font-dm text-[49px] font-bold">Products</h1>
+        <h1 className="font-dm lg:text-[49px] text-[30px] font-bold">Products</h1>
         <div className='flex'>
           <p  className="font-dm text-[12px] text-[#767676]">Home</p>
           <div className="font-dm text-[10px] px-1 pt-1">
@@ -64,9 +64,9 @@ const Shop = () => {
       <div className="flex py-[60px] gap-3">
         <div className="w-3/12">
           <div className="py-[10px]">
-            <div onClick={(()=>{cateShow(!cate)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px] '>Shop by Category</h3>
-                <div className="py-3 font-dm text-[20px]">
+            <div onClick={(()=>{cateShow(!cate)})} className="flex justify-between items-center lg:py-[15px] ">
+                <h3 className='font-dm lg:text-[20px] text-[9px]'>Shop by Category</h3>
+                <div className="py-3 font-dm lg:text-[20px]">
                    {cate ? <MdArrowDropUp/> : <MdArrowDropDown/>}
                 </div>
             </div>
@@ -74,16 +74,16 @@ const Shop = () => {
             <div className="">
         {cate && (
                 <ul>
-                    <li onClick={handleAllProduct} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0]'>
-                        <p className='font-dm text-[16px] text-[#767676] cursor-pointer'>All Products</p>
-                        <div className="p-1">
+                    <li onClick={handleAllProduct} className='flex justify-between items-center py-[10px] border-b-1 border-[#F0F0F0]'>
+                        <p className='font-dm lg:text-[16px] text-[12px] text-[#767676] cursor-pointer'>All Products</p>
+                        <div className="p-1 lg:text-[16px] text-[12px]">
                             <AiOutlinePlus/>
                         </div>
                     </li>
                 {category.map((item)=>(
-                    <li onClick={()=>{handleCategory(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer'>
-                    <p className='font-dm text-[16px] text-[#767676]'> {item}</p>
-                    <div className="p-1">
+                    <li onClick={()=>{handleCategory(item)}} className='flex justify-between items-center py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer'>
+                    <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'> {item}</p>
+                    <div className="p-1 lg:text-[16px] text-[12px]">
                         <AiOutlinePlus/>
                     </div>
                     </li>
@@ -93,9 +93,9 @@ const Shop = () => {
             </div>
           </div>
           <div className="py-[10px]">
-            <div onClick={(()=>{brandShow(!brand)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px]'>Shop by Brand</h3>
-                <div className="py-3 font-dm text-[20px]">
+            <div onClick={(()=>{brandShow(!brand)})} className="flex justify-between items-center lg:py-[15px]">
+                <h3 className='font-dm lg:text-[20px] text-[11px]'>Shop by Brand</h3>
+                <div className="py-3 font-dm lg:text-[20px]">
                     {brand ? <MdArrowDropUp/> : <MdArrowDropDown/>}
                 </div>
             </div>
@@ -103,15 +103,15 @@ const Shop = () => {
             <div className="">
             <ul>
                 <li onClick={handleAllProduct} className=' flex justify-between py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676] cursor-pointer'>All Brand</p>
-                    <div className="p-1">
+                    <p className='font-dm lg:text-[16px] text-[12px] text-[#767676] cursor-pointer'>All Brand</p>
+                    <div className="p-1 lg:text-[16px] text-[12px]">
                         <AiOutlinePlus/>
                     </div>
                 </li>
             {brandSet.map((item)=>(
                 <li onClick={()=>{handleBrand(item)}} className='flex justify-between py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer last:hidden'>
-                <p className='font-dm text-[16px] text-[#767676]'>{item}</p>
-                <div className="p-1">
+                <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>{item}</p>
+                <div className="p-1 lg:text-[16px] text-[12px]">
                     <AiOutlinePlus/>
                 </div>
                 </li>                    
@@ -121,9 +121,9 @@ const Shop = () => {
             )}
           </div>
           <div className="py-[10px]">
-            <div  onClick={(()=>{priceShow(!price)})} className="flex justify-between py-[15px]">
-                <h3 className='font-dm text-[20px]'>Shop by Price</h3>
-                <div className="py-3 font-dm text-[20px]">
+            <div  onClick={(()=>{priceShow(!price)})} className="flex justify-between items-center lg:py-[15px]">
+                <h3 className='font-dm lg:text-[20px] text-[12px]'>Shop by Price</h3>
+                <div className="py-3 font-dm lg:text-[20px]">
                     {price ? <MdArrowDropUp/> : <MdArrowDropDown/>}
                 </div>
             </div>
@@ -131,16 +131,16 @@ const Shop = () => {
             <div className="">
                 <ul>
                     <li onClick={handleAllProduct} className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>All Price</p>
+                    <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>All Price</p>
                     </li>
                     <li onClick={()=> handlePrice({low:0, high:5})} className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>$0-$5</p>
+                    <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>$0-$5</p>
                     </li>
                     <li onClick={()=> handlePrice({low:6, high:20})}  className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>$6-$20</p>
+                    <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>$6-$20</p>
                     </li>
                     <li onClick={()=> handlePrice({low:21, high:100})} className=' py-[10px] border-b-1 border-[#F0F0F0]'>
-                    <p className='font-dm text-[16px] text-[#767676]'>$21-$100</p>
+                    <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'>$21-$100</p>
                     </li>
                 </ul>
             </div>
