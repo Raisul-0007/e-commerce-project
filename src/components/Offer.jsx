@@ -22,9 +22,9 @@ const Offer = () => {
                                                     <img className='w-[100%]' src={Offer1} alt="" />
                                             </a>
                                                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
-                                                    <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
-                                                    <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
-                                                    <h3 className='font-dm text-[16px] flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
+                                                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] lg:py-2 py-1 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
+                                                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] lg:py-2 py-1 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
+                                                    <h3 className='font-dm lg:text-[16px] text-[12px] flex items-center justify-end gap-2 py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
                                                   </div>
                                                   <div className="font-dm lg:text-[16px] text-[12px] bg-[#262626] py-1 lg:px-5 px-3 absolute lg:top-[15px] lg:left-[15px] top-[5px] left-[5px] text-[#FFFFFF]">
                                                     10%
@@ -46,9 +46,9 @@ const Offer = () => {
                     <img className='w-[100%]' src={Offer2} alt="" />
                     </a>
                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
                   </div>
                   <div className="font-dm lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] py-1 lg:px-3 px-2 absolute lg:top-[15px] lg:left-[15px] top-[5px] left-[5px]">
                     <p>New</p>
@@ -70,9 +70,9 @@ const Offer = () => {
                     <img className='w-[100%]' src={Offer3} alt="" />
                     </a>
                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
                   </div>
                   <div className="font-dm lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] py-1 lg:px-3 px-2 absolute lg:top-[15px] lg:left-[15px] top-[5px] left-[5px]">
                     <p>New</p>
@@ -94,9 +94,9 @@ const Offer = () => {
                     <img className='w-[100%]' src={Offer4} alt="" />
                     </a>
                     <div className='absolute bottom-0 right-0 bg-[#FFFFFF] w-[100%] justify-end opacity-0 hover:opacity-100 ease-in-out duration-300 '>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
-                    <h3 className='font-dm flex items-center justify-end gap-2 py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer '>Add to Wish List < FaHeart/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] py-1 lg:py-2 pr-2 hover:font-bold cursor-pointer'>Compare<LuRefreshCcw/></h3>
+                    <h3 className='font-dm flex items-center justify-end gap-2 lg:text-[16px] text-[12px] lg:py-2 pr-2 hover:font-bold cursor-pointer'>Add to Cart <FaCartShopping/></h3>
                   </div>
                   <div className="font-dm lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] py-1 lg:px-3 px-2 absolute lg:top-[15px] lg:left-[15px] top-[5px] left-[5px]">
                     <p>New</p>
