@@ -7,8 +7,10 @@ import { Outlet } from 'react-router-dom'
 const Layout = () => {
   return (
     <>
-    <Navber/>
-    <Header/>
+    <div className="sticky top-0 z-50 ">
+      <Navber/>
+      <Header/>
+    </div>
     <Outlet/>
     <Footer/>
     </>

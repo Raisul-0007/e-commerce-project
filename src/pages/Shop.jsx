@@ -39,11 +39,11 @@ const Shop = () => {
         setfilterCategory(filterItem)
     }
     let handleAllProduct = ()=> {
-        setfilterCategory("")
+        setfilterCategory([])
     }
     let handlePrice = (value)=>{
         setLow(value.low)
-        setLow(value.high)
+        setHigh(value.high)
         let priceFilter = info.filter((item)=> item.price > value.low && item.price < value.high)
         setfilterCategory(priceFilter);
         
@@ -81,7 +81,7 @@ const Shop = () => {
                         </div>
                     </li>
                 {category.map((item)=>(
-                    <li onClick={()=>{handleCategory(item)}} className='flex justify-between items-center py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer'>
+                    <li key={item.id} onClick={()=>{handleCategory(item)}} className='flex justify-between items-center py-[10px] border-b-1 border-[#F0F0F0] cursor-pointer'>
                     <p className='font-dm lg:text-[16px] text-[12px] text-[#767676]'> {item}</p>
                     <div className="p-1 lg:text-[16px] text-[12px]">
                         <AiOutlinePlus/>

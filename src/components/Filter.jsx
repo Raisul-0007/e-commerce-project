@@ -2,7 +2,7 @@ import { FaListUl, FaTableCellsLarge } from 'react-icons/fa6'
 import Pagination from './Pagination'
 import Products from './Products'
 import { ApiData } from './ContextApi';
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 const Filter = ({filterCategory}) => {
   
   let {info} = useContext(ApiData)
@@ -10,12 +10,13 @@ const Filter = ({filterCategory}) => {
   let [currentPage,setCurrentPage] = useState(1)
   let lastPage = perPage * currentPage
   let firstPage = lastPage - perPage
-  let allPage = info.slice(firstPage, lastPage)
-  let [active,setActive] =useState("")
+  let showProduct = filterCategory.length > 0 ? filterCategory : info
+  let allPage = showProduct.slice(firstPage, lastPage)
+  let [active,setActive] =useState("active")
    
   let pageNumber = [];
 
-  for (let i= 1; i<= Math.ceil(info.length/perPage); i++){
+  for (let i= 1; i<= Math.ceil(showProduct.length/perPage); i++){
     pageNumber.push(i);
   }
   let prev = ()=>{
@@ -33,18 +34,26 @@ const Filter = ({filterCategory}) => {
   }
   let handlePageNumber =(e)=>{
     setPerPage(e.target.value)
+    setCurrentPage(1)
   }
   let handleActive = ()=>{
     setActive("active")
+  }
+  let handlelist = ()=>{
+    setActive("")
   } 
+
+  useEffect(()=>{
+  setCurrentPage(1)
+},[filterCategory])
   return (
     <>
     <div className="flex justify-between">
         <div className=" flex gap-3">
-            <div onClick={()=>setActive("")}  className={`${active == "active" ?"p-[4px] lg:text-[16px] text-[12px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" : "p-[5px] lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] cursor-pointer " }`}>
+            <div onClick={handleActive}  className={`${active === "active" ? "p-[5px] lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] cursor-pointer" : "p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer lg:text-[16px] text-[12px]" }`}>
                 <FaTableCellsLarge/>
             </div>
-           <div onClick={handleActive} className={`${active == "active" ? "p-[5px] lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] cursor-pointer " : " p-[4px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer lg:text-[16px] text-[12px]" }`}>
+           <div onClick={handlelist} className={`${active === "active" ? "p-[4px] lg:text-[16px] text-[12px] hover:bg-[#505050] hover:text-[#FFFFFF] border-1 border-[#262626] cursor-pointer" : "p-[5px] lg:text-[16px] text-[12px] bg-[#262626] text-[#FFFFFF] cursor-pointer " }`}>
              <FaListUl/>
            </div>
         </div>
@@ -60,7 +69,7 @@ const Filter = ({filterCategory}) => {
       </div>
     </div>
     <div className="">
-        <Products active={active} filterCategory={filterCategory} allPage={allPage}/>
+        <Products active={active}  allPage={allPage}/>
     </div>
     <div className="py-[50px]"><Pagination pageNumber={pageNumber} paginate={paginate} prev={prev} next={next} currentPage={currentPage} filterCategory={filterCategory} /></div>
     </>

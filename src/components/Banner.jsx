@@ -43,24 +43,16 @@ const Banner = () => {
     <div>
         <Slider {...settings}>
         <div className="cursor-pointer">
-          <Link to="/shop">
             <img src={BanImg} alt="" />
-          </Link>  
         </div>
         <div className="cursor-pointer">
-          <Link to="/shop">
             <img src={BanImg} alt="" />
-          </Link>  
         </div>
         <div className="cursor-pointer">
-          <Link to="/shop">
             <img src={BanImg} alt="" />
-          </Link>  
         </div>
         <div className="cursor-pointer">
-          <Link to="/shop">
             <img src={BanImg} alt="" />
-          </Link>  
         </div>
          </Slider>
     </div>

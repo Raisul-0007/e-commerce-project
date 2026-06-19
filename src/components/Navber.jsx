@@ -10,7 +10,7 @@ const Navber = () => {
 
     
   return (
-    <div className='py-4 '>
+    <div className='py-4 bg-white'>
         <Container>
         <div className="lg:flex items-center  ">
             <div className="lg:w-2/12">
