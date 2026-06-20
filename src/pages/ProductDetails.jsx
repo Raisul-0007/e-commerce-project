@@ -106,7 +106,7 @@ const ProductDetails = () => {
       <div className="flex gap-3 py-4">
         <button
           onClick={() => handleCart(product)}
-          className="border px-4 py-2 hover:bg-black hover:text-white"
+          className="border px-4 py-2 hover:bg-black cursor-pointer hover:text-white"
         >
           Add to Cart
         </button>

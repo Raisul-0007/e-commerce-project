@@ -33,6 +33,15 @@ const Navber = () => {
                     <li>
                         <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Journal" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/Journal'>Journal</Link>
                     </li>
+                    <li>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Checkout" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/Checkout'>Checkout</Link>
+                    </li>
+                    <li>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/Login" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/Login'>Login</Link>
+                    </li>
+                    <li>
+                        <Link className={`font-dm cursor-pointer lg:text-[16px] text-[13px] lg:text-[#767676] ${location.pathname == "/SignUp" ? "text-[#262626] font-bold" : ""} hover:text-[#262626] duration-300 ease-in-out`} to='/SignUp'>SignUp</Link>
+                    </li>
                    </ul>   
             </div>
             <div className='lg:hidden absolute top-4 right-6' onClick={()=>setMenu(!menu)}>
