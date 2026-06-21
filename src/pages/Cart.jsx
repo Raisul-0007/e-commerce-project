@@ -86,7 +86,7 @@ const Cart = () => {
                 </div>
                 )}
                 <div className=" pb-20">
-                    <Link className='mx-auto h-10 w-40 flex justify-center items-center text-white bg-[#262626]' to="/Checkout">Checkout</Link>
+                    <Link className='mx-auto lg:text-[18px] text-sm  h-10 w-40 flex justify-center items-center text-white bg-[#262626]' to="/Checkout">Checkout</Link>
                 </div>
         </Container>
     </div>
