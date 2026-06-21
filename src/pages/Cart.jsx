@@ -5,20 +5,21 @@ import { RxCross2 } from 'react-icons/rx'
 import { FiMinus, FiPlus } from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { discreament, increament, removeCart } from '../components/slice/productSlice'
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
      window.scrollTo(0, 0)
      
-    let dicpatch = useDispatch()
+    let dispatch = useDispatch()
     let cartData = useSelector((state)=>state.product.cartItem)
     let handleRemove =(item)=>{
-        dicpatch(removeCart(item))
+        dispatch(removeCart(item))
     }
     let handleplus = (item)=>{
-        dicpatch(increament(item))
+        dispatch(increament(item))
     }
     let handleminus = (item)=>{
-        dicpatch(discreament(item))
+        dispatch(discreament(item))
     }
     
     let grandTotal = cartData.reduce((total,item)=>{
@@ -45,7 +46,7 @@ const Cart = () => {
 }
             {cartData.length > 0 ?
             (cartData.map((item)=>(
-                <div className="">
+                <div key={item.id} className="">
                     <div className="flex items-center pl-2 border-1 border-solid border-[#F0F0F0] py-[10px]">
                     <div className="w-2/5  flex items-center">
                     <div onClick={()=>handleRemove(item)} className="cursor-pointer">
@@ -55,7 +56,7 @@ const Cart = () => {
                         <img src={item.thumbnail} alt="" />
                     </div>
                     <div className="pr-4 lg:text-[20px] text-sm">
-                        {item.title.slice(0, 15)}
+                        {item.title?.slice(0, 15)}
                     </div>
                     </div>
                     <div className="w-1/5 lg:text-[20px] text-center text-sm">${(item.price - (item.price * item.discountPercentage / 100)).toFixed(2)}</div>
@@ -80,10 +81,13 @@ const Cart = () => {
                         Grand Total :
                     </div>
                     <div className="lg:text-[18px] text-[10px] w-2/5 py-2 text-center">
-                        {grandTotal.toFixed(2)}
+                        ${grandTotal.toFixed(2)}
                     </div>
                 </div>
                 )}
+                <div className=" pb-20">
+                    <Link className='mx-auto h-10 w-40 flex justify-center items-center text-white bg-[#262626]' to="/Checkout">Checkout</Link>
+                </div>
         </Container>
     </div>
   )

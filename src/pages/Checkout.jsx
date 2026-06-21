@@ -201,7 +201,7 @@ console.log("showPopup:", showPopup)
           <button
             onClick={handlePayment}
             type="button"
-            className="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium bg-[#262626] text-white hover:bg-[#767676]"
+            className="flex w-full items-center justify-center rounded-lg px-5 py-2.5 text-sm font-medium bg-[#262626] text-white hover:bg-[#767676] cursor-pointer"
           >
             {loading ? <AiOutlineLoading3Quarters/> : " Proceed to Payment"}
           </button>
