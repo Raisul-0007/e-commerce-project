@@ -19,7 +19,6 @@ const ProductDetails = () => {
   const [ship, setShip] = useState(false)
   const [tab, setTab] = useState("description")
 
-  // ✅ FIX: scroll should be inside useEffect
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -30,7 +29,6 @@ const ProductDetails = () => {
       .then((res) => setProduct(res.data))
   }, [productsId.id])
 
-  // ✅ safe rating render
   const clientRating = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5
 
@@ -43,7 +41,6 @@ const ProductDetails = () => {
     )
   })
 
-  // ✅ safe price calculation
   const discountPrice =
     product?.price && product?.discountPercentage
       ? (product.price / 100) * product.discountPercentage
@@ -66,7 +63,6 @@ const ProductDetails = () => {
   return (
     <Container>
 
-      {/* Breadcrumb */}
       <div>
         <h1 className="text-[34px] font-bold">Products</h1>
         <div className="flex items-center text-[12px] text-[#6D6D60]">
@@ -74,7 +70,6 @@ const ProductDetails = () => {
         </div>
       </div>
 
-      {/* Product Image */}
       <div className="py-10">
         <img
           className="w-1/3 mx-auto"
@@ -86,7 +81,6 @@ const ProductDetails = () => {
         </h2>
       </div>
 
-      {/* Rating */}
       <div className="flex items-center gap-2">
         <div className="flex text-[#FFD881]">
           {clientRating}
@@ -94,7 +88,6 @@ const ProductDetails = () => {
         <p className="text-[#767676] text-[14px]">1 Review</p>
       </div>
 
-      {/* Price */}
       <div className="flex gap-2 py-3">
         <del className="text-[#767676]">${product.price}</del>
         <h4 className="text-[#262626] font-bold">
@@ -102,7 +95,6 @@ const ProductDetails = () => {
         </h4>
       </div>
 
-      {/* Cart */}
       <div className="flex gap-3 py-4">
         <button
           onClick={() => handleCart(product)}
@@ -112,7 +104,6 @@ const ProductDetails = () => {
         </button>
       </div>
 
-      {/* Accordion */}
       <div className="lg:w-2/5">
 
         <div
@@ -144,10 +135,8 @@ const ProductDetails = () => {
         )}
       </div>
 
-      {/* TAB SYSTEM (FIXED) */}
       <div className="lg:w-2/5 mt-5">
 
-        {/* Tabs */}
         <div className="flex border-b">
           <button
             onClick={() => setTab("description")}
@@ -172,7 +161,6 @@ const ProductDetails = () => {
           </button>
         </div>
 
-        {/* Content */}
         <div className="py-3">
 
           {tab === "description" && (
